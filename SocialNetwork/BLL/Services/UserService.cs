@@ -111,6 +111,8 @@ namespace SocialNetwork.BLL.Services
 
             var outgoingMessages = messageService.GetOutcomingMessagesByUserId(userEntity.id);
 
+            var myfriends = new List<Friend>();//!!!!
+
             return new User(userEntity.id,
                           userEntity.firstname,
                           userEntity.lastname,
@@ -120,7 +122,8 @@ namespace SocialNetwork.BLL.Services
                           userEntity.favorite_movie,
                           userEntity.favorite_book,
                           incomingMessages,
-                          outgoingMessages
+                          outgoingMessages,
+                          myfriends
                           );
         }
     }
