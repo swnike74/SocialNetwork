@@ -18,10 +18,12 @@ namespace SocialNetwork.BLL.Services
     {
         MessageService messageService;
         IUserRepository userRepository;
+        FriendService friendService;
         public UserService()
         {
             userRepository = new UserRepository();
             messageService = new MessageService();
+            friendService = new FriendService();
         }
 
         public void Register(UserRegistrationData userRegistrationData)
@@ -111,7 +113,7 @@ namespace SocialNetwork.BLL.Services
 
             var outgoingMessages = messageService.GetOutcomingMessagesByUserId(userEntity.id);
 
-            var myfriends = new List<Friend>();//!!!!
+            var myfriends = friendService.FindById(userEntity.id);
 
             return new User(userEntity.id,
                           userEntity.firstname,

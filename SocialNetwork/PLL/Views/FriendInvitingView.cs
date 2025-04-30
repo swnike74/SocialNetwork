@@ -31,6 +31,7 @@ namespace SocialNetwork.PLL.Views
             {
                 this.friendService.Register(friendRegistrationData, user);
                 SuccessMessage.Show("Вы успешно пригласили своего друга.");
+                user = userService.FindById(user.Id);
             }
             catch (ArgumentNullException)
             {
