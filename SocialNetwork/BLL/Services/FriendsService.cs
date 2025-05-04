@@ -31,8 +31,7 @@ namespace SocialNetwork.BLL.Services
                 throw new ArgumentNullException();
 
             var userentity = userRepository.FindByEmail(friendRegistrationData.FriendEmail);
-            if (userentity == null)
-                throw new ArgumentNullException();
+            if (userentity == null) throw new UserNotFoundException();
 
             var friendEntity = new FriendEntity()
             {

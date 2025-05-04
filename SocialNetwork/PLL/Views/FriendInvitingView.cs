@@ -1,4 +1,5 @@
-﻿using SocialNetwork.BLL.Models;
+﻿using SocialNetwork.BLL.Exceptions;
+using SocialNetwork.BLL.Models;
 using SocialNetwork.BLL.Services;
 using SocialNetwork.PLL.Helper;
 using System;
@@ -36,6 +37,11 @@ namespace SocialNetwork.PLL.Views
             catch (ArgumentNullException)
             {
                 AlertMessage.Show("Введите корректное значение.");
+            }
+
+            catch (UserNotFoundException)
+            {
+                AlertMessage.Show("Друг не найден!");
             }
 
             catch (Exception)

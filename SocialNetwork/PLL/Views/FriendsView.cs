@@ -21,7 +21,7 @@ namespace SocialNetwork.PLL.Views
 
             myFriends.ToList().ForEach(friend =>
             {
-                Console.WriteLine("Имя: {0}{1}. E-mail: ", friend.FirstName, friend.LastName, friend.Email);
+                Console.WriteLine("Имя: {0} {1}. E-mail:{2} ", friend.FirstName, friend.LastName, friend.Email);
             });
         }
     }

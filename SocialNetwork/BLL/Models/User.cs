@@ -8,6 +8,10 @@ namespace SocialNetwork.BLL.Models
 {
     public class User
     {
+        private int v1;
+        private string v2;
+        private object value;
+
         public int Id { get; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -48,5 +52,7 @@ namespace SocialNetwork.BLL.Models
             this.OutgoingMessages = outgoingMessages;
             this.Friends = myfriends;
         }
+
+       
     }
 }
